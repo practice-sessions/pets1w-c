@@ -4,12 +4,12 @@ const apiRouter = express.Router();
 const auth = require('../../../middleware/auth'); 
 const { check, validationResult } = require('express-validator');
 
-const Pet = require('../../../models/v10/Pet');
-const OwnBio = require('../../../models/v10/OwnBio');
+const Pet = require('../../../models/v1/Pet');
+const OwnBio = require('../../../models/v1/OwnBio');
 const User = require('../../../models/v1/User');
 
 
-// @route   POST api/v10/pets/add-petbio
+// @route   POST api/v1/pets/add-petbio
 // @desc    Add pet bio to pet data
 // @access  Private 
 apiRouter.post('/add-petbio', 
@@ -67,7 +67,7 @@ async (req, res) => {
 
 });
 
-// @route   GET api/v10/pets/all
+// @route   GET api/v1/pets/all
 // @desc    Get all pets data 
 // @access  Private
 apiRouter.get('/all', auth, async (req, res) => {
@@ -82,7 +82,7 @@ apiRouter.get('/all', auth, async (req, res) => {
   }
 });
 
-// @route   GET api/v10/pets/:id
+// @route   GET api/v1/pets/:id
 // @desc    Get pet data by id
 // @access  Private 
 apiRouter.get('/:id', auth, async (req, res) => {
@@ -109,7 +109,7 @@ apiRouter.get('/:id', auth, async (req, res) => {
   }
 });
 
-// @route   DELETE api/v10/pets/:id
+// @route   DELETE api/v1/pets/:id
 // @desc    Delete pet data 
 // @access  Private
 apiRouter.get('/:id', auth, async (req, res) => {
