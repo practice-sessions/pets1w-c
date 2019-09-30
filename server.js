@@ -23,11 +23,9 @@ app.get('/', (req, res) => res.send('API connected..'));
 // Define Routes 
 app.use('/api/v1/users', require('./routes/api/v1/users')); 
 app.use('/api/v1/auth', require('./routes/api/v1/auth'));
-
-app.use('/api/v10/auth', require('./routes/api/v10/auth10'));
-app.use('/api/v10/ownbio', require('./routes/api/v10/ownbio'));
-app.use('/api/v10/pets', require('./routes/api/v10/pets'));
-app.use('/api/v10/todos', require('./routes/api/v10/todos'));
+app.use('/api/v1/auth', require('./routes/api/v1/auth'));
+app.use('/api/v1/ownbio', require('./routes/api/v1/ownbio'));
+app.use('/api/v1/pets', require('./routes/api/v1/pets'));
  
 const PORT = process.env.PORT || 5000;
 
