@@ -82,6 +82,33 @@ apiRouter.get('/all', auth, async (req, res) => {
   }
 });
 
+// @route   GET api/v10/pets/:id
+// @desc    Get pet data by id
+// @access  Private 
+apiRouter.get('/:id', auth, async (req, res) => {
+  try {
+    const pet = await Pet.findById(req.params.id);
+
+    if(!pet) {
+      return res.status(400).json({ msg: 'Pet not found!' });
+    }
+
+    res.json(pet);
+    
+  } catch (err) {
+    console.error(err.message);
+
+    // To prevent status(500) error down below running prematurely when
+    // non-formatted ObjectId-type possibly mis-spell or malicious (input) 
+    // checking, we use the status(400) error handler as below 
+    if(err.kind === 'ObjectId') {
+      return res.status(400).json({ msg: 'Pet not found!' });
+    }
+
+    res.status(500).send('Server error, something went wrong!');
+  }
+});
+
 
 
 module.exports = apiRouter; 
