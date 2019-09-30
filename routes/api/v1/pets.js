@@ -67,6 +67,21 @@ async (req, res) => {
 
 });
 
+// @route   GET api/v10/pets/all
+// @desc    Get all pets data 
+// @access  Private
+apiRouter.get('/all', auth, async (req, res) => {
+  try {
+    const pets = await Pet.find().sort({ date: -1 });
+
+    res.json(pets);
+    
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Server error, something went wrong!');
+  }
+});
+
 
 
 module.exports = apiRouter; 
