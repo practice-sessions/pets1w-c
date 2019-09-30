@@ -2,9 +2,10 @@
   "name": "pets1w-c",
   "version": "1.0.0",
   "description": "Pets-related aspects",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server",
+    "server": "nodemon server"
   },
   "keywords": [],
   "author": "",
