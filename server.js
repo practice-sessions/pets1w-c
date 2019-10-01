@@ -18,7 +18,7 @@ connectDB();
 app.use(express.json({ extended: false })); 
 
 // End points
-app.get('/', (req, res) => res.send('API connected..'));
+app.get('/', (req, res) => res.send('pets1w-c API connected..'));
 
 // Define Routes 
 app.use('/api/v1/users', require('./routes/api/v1/users')); 
