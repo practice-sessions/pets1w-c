@@ -23,7 +23,6 @@ app.get('/', (req, res) => res.send('pets1w-c API connected..'));
 // Define Routes 
 app.use('/api/v1/users', require('./routes/api/v1/users')); 
 app.use('/api/v1/auth', require('./routes/api/v1/auth'));
-app.use('/api/v1/auth', require('./routes/api/v1/auth'));
 app.use('/api/v1/ownbio', require('./routes/api/v1/ownbio'));
 app.use('/api/v1/pets', require('./routes/api/v1/pets'));
  
