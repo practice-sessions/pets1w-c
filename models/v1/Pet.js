@@ -1,13 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Create Schema 
+// Create Schema
 const PetSchema = new Schema({
-	/*
-	pets: {
-		type: [String]
-	},
-	*/
 	petbio: [
 		{
 			
@@ -17,7 +12,7 @@ const PetSchema = new Schema({
 			},
       pettype: {
 				// Array used to enable multiple pet types if needed - changed 
-				type: String,
+				type: [String],
 				required: true
 			},
 			petbreed: {
@@ -44,9 +39,11 @@ const PetSchema = new Schema({
 	},
 	// Serves as unique identifier for each pet registered to owner 
 	firsteverarrivaldate: {
-		type: Date
+    type: Date,
+    default: Date.now
 	},
-	// Owners fullname (first+last) concantenated - for ease of reference
+  // Owners fullname (first+last) concantenated - for ease of reference
+  // concantenate not done yet
 	fullname: {
 		type: String
 	},
