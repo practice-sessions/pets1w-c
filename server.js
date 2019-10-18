@@ -6,7 +6,7 @@ const app = express();
 
 // Setting up CORS 
 // const corsOptions = {
-// 	origin: ["*", "http://localhost:3000"], // List of host authorized make cors request. For cross origin cookies specific host should be given. (ex:"http://localhost:3000")
+// 	origin: ["*", "http://localhost:3030"], // List of host authorized make cors request. For cross origin cookies specific host should be given. (ex:"http://localhost:3000")
 // 	credentials: true // Must enable for cross origin cookies.
 // };
 // app.use(cors(corsOptions));
@@ -26,7 +26,7 @@ app.use('/api/v1/auth', require('./routes/api/v1/auth'));
 app.use('/api/v1/ownbio', require('./routes/api/v1/ownbio'));
 app.use('/api/v1/pets', require('./routes/api/v1/pets'));
  
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5050;
 
 app.listen(PORT, () => {
   console.log('Server running on port ', PORT)
