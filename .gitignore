@@ -1,35 +1,27 @@
 # dependencies
-/node_modules
-node_modules/
+/node_modules/
 /.pnp
 .pnp.js
+
+#/config/db.js 
+#/config/production.json
+/config/default.json
 
 # testing
 /coverage
 
-# production
-/build
+/client/build
 
-/client/build/
-
-# misc
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
 /client/.env.local
 /client/.env.development.local
 /client/.env.test.local
 /client/.env.production.local
 
+.vscode
+pseudocode.txt
+
+
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
-
-.vscode
-.vscode/
-pseudocode.text
-
-/config
+yarn-error.log* 
